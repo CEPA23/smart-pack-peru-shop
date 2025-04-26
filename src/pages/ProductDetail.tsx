@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,28 +10,78 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
-const product = {
-  id: 1,
-  name: "SmartPack Pro",
-  description: "Mochila inteligente con puerto USB y compartimiento para laptop",
-  price: "S/. 299.00",
-  colors: ["Negro", "Azul", "Gris"],
-  sizes: ["15\"", "17\""],
-  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", // Woman using laptop
-  features: [
-    "Puerto USB integrado",
-    "Compartimiento acolchado para laptop",
-    "Sistema antirrobo",
-    "Material impermeable",
-    "Múltiples bolsillos organizadores",
-  ],
-};
+const products = [
+  {
+    id: 1,
+    name: "SmartPack Pro",
+    description: "Mochila inteligente con puerto USB y compartimiento para laptop",
+    price: "S/. 299.00",
+    colors: ["Negro", "Azul", "Gris"],
+    sizes: ["15\"", "17\""],
+    image: "/lovable-uploads/8b79e571-f6eb-4ebd-9ccb-ee36a13b2076.png",
+    features: [
+      "Puerto USB integrado",
+      "Compartimiento acolchado para laptop",
+      "Sistema antirrobo",
+      "Material impermeable",
+      "Múltiples bolsillos organizadores",
+    ],
+  },
+  {
+    id: 2,
+    name: "SmartPack Lite",
+    description: "Mochila ligera con sistema antirrobo",
+    price: "S/. 199.00",
+    colors: ["Negro", "Rojo", "Azul"],
+    sizes: ["13\"", "15\""],
+    image: "/lovable-uploads/8ded71eb-6876-4555-b0e2-1e08d34fdc12.png",
+    features: [
+      "Sistema antirrobo",
+      "Material impermeable",
+      "Ligera y compacta",
+      "Bolsillos organizadores",
+      "Puerto USB",
+    ],
+  },
+  {
+    id: 3,
+    name: "SmartPack Elite",
+    description: "Mochila premium con cargador inalámbrico integrado",
+    price: "S/. 399.00",
+    colors: ["Negro", "Gris", "Azul marino"],
+    sizes: ["15\"", "17\""],
+    image: "/lovable-uploads/5d1b0af7-666d-4b3d-b8be-35213514d5cc.png",
+    features: [
+      "Cargador inalámbrico",
+      "Puerto USB de alta velocidad",
+      "Sistema antirrobo avanzado",
+      "Material premium impermeable",
+      "Compartimientos especiales",
+    ],
+  },
+];
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const product = products.find(p => p.id === Number(id));
+  const [selectedColor, setSelectedColor] = useState(product?.colors[0]);
+  const [selectedSize, setSelectedSize] = useState(product?.sizes[0]);
+
+  const handleAddToCart = () => {
+    toast({
+      title: "Producto agregado",
+      description: "El producto ha sido agregado al carrito",
+    });
+    navigate("/cart");
+  };
+
+  if (!product) {
+    return <div>Producto no encontrado</div>;
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -43,7 +92,7 @@ const ProductDetail = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg shadow-lg object-contain"
             />
           </div>
           <div className="space-y-6">
@@ -85,7 +134,7 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <Button size="lg" className="w-full">
+            <Button size="lg" className="w-full" onClick={handleAddToCart}>
               Añadir al carrito
             </Button>
             
