@@ -10,7 +10,7 @@ const products = [
     price: "S/. 299.00",
     colors: ["Negro", "Azul", "Gris"],
     sizes: ["15\"", "17\""],
-    image: "/images/smartpack-pro.jpg",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", // Woman using laptop
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const products = [
     price: "S/. 199.00",
     colors: ["Negro", "Rojo", "Azul"],
     sizes: ["13\"", "15\""],
-    image: "/images/smartpack-lite.jpg",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1", // Laptop on surface
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const products = [
     price: "S/. 399.00",
     colors: ["Negro", "Gris", "Azul marino"],
     sizes: ["15\"", "17\""],
-    image: "/images/smartpack-elite.jpg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", // MacBook with code
   },
 ];
 
@@ -65,4 +65,3 @@ export const ProductGrid = () => {
     </div>
   );
 };
-

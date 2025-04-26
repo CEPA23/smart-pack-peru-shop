@@ -19,7 +19,7 @@ const product = {
   price: "S/. 299.00",
   colors: ["Negro", "Azul", "Gris"],
   sizes: ["15\"", "17\""],
-  image: "/images/smartpack-pro.jpg", // Actualizado para usar imagen local
+  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", // Woman using laptop
   features: [
     "Puerto USB integrado",
     "Compartimiento acolchado para laptop",
@@ -108,4 +108,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-

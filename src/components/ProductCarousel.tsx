@@ -13,19 +13,19 @@ const products = [
     id: 1,
     name: "SmartPack Pro",
     price: "S/. 299.00",
-    image: "/images/smartpack-pro.jpg",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", // Woman using laptop
   },
   {
     id: 2,
     name: "SmartPack Lite",
     price: "S/. 199.00",
-    image: "/images/smartpack-lite.jpg",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1", // Laptop on surface
   },
   {
     id: 3,
     name: "SmartPack Elite",
     price: "S/. 399.00",
-    image: "/images/smartpack-elite.jpg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", // MacBook with code
   },
 ];
 
