@@ -13,19 +13,19 @@ const products = [
     id: 1,
     name: "SmartPack Pro",
     price: "S/. 299.00",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "/images/smartpack-pro.jpg",
   },
   {
     id: 2,
     name: "SmartPack Lite",
     price: "S/. 199.00",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    image: "/images/smartpack-lite.jpg",
   },
   {
     id: 3,
     name: "SmartPack Elite",
     price: "S/. 399.00",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
+    image: "/images/smartpack-elite.jpg",
   },
 ];
 
@@ -56,4 +56,3 @@ export const ProductCarousel = () => {
     </Carousel>
   );
 };
-

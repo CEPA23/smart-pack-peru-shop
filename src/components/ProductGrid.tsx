@@ -10,7 +10,7 @@ const products = [
     price: "S/. 299.00",
     colors: ["Negro", "Azul", "Gris"],
     sizes: ["15\"", "17\""],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "/images/smartpack-pro.jpg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const products = [
     price: "S/. 199.00",
     colors: ["Negro", "Rojo", "Azul"],
     sizes: ["13\"", "15\""],
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    image: "/images/smartpack-lite.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const products = [
     price: "S/. 399.00",
     colors: ["Negro", "Gris", "Azul marino"],
     sizes: ["15\"", "17\""],
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
+    image: "/images/smartpack-elite.jpg",
   },
 ];
 
