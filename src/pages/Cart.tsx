@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 type FormData = {
   fullName: string;
@@ -16,6 +17,7 @@ type FormData = {
 
 const Cart = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const form = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
@@ -24,6 +26,8 @@ const Cart = () => {
       description: "Gracias por tu compra. Te contactaremos pronto.",
     });
     console.log(data);
+    // Redirigir a la página principal después de confirmar la compra
+    navigate('/');
   };
 
   return (
@@ -129,3 +133,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
