@@ -12,20 +12,20 @@ import { useNavigate } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "SmartPack Pro",
-    price: "S/. 299.00",
-    image: "/lovable-uploads/8b79e571-f6eb-4ebd-9ccb-ee36a13b2076.png",
+    name: "O'ipiSmart Pro",
+    price: "S/. 399.00",
+    image: "/images/nueva.png",
   },
   {
     id: 2,
-    name: "SmartPack Lite",
+    name: "O'ipiSmart Lite",
     price: "S/. 199.00",
     image: "/lovable-uploads/8ded71eb-6876-4555-b0e2-1e08d34fdc12.png",
   },
   {
     id: 3,
-    name: "SmartPack Elite",
-    price: "S/. 399.00",
+    name: "O'ipiSmart Elite",
+    price: "S/. 299.00",
     image: "/lovable-uploads/5d1b0af7-666d-4b3d-b8be-35213514d5cc.png",
   },
 ];
@@ -39,15 +39,19 @@ export const ProductCarousel = () => {
         {products.map((product) => (
           <CarouselItem key={product.id}>
             <Card className="border-none cursor-pointer" onClick={() => navigate(`/product/${product.id}`)}>
-              <CardContent className="flex aspect-square items-center justify-center p-6">
-                <div className="space-y-4">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-contain rounded-lg"
-                  />
-                  <h3 className="text-2xl font-semibold">{product.name}</h3>
-                  <p className="text-xl font-bold text-primary">{product.price}</p>
+              <CardContent className="flex aspect-video items-center justify-center p-2 md:p-6">
+                <div className="space-y-4 w-full">
+                  <div className="w-full h-[400px] overflow-hidden rounded-lg">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-semibold">{product.name}</h3>
+                    <p className="text-xl font-bold text-primary">{product.price}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

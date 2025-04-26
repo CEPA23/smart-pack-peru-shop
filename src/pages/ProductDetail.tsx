@@ -20,7 +20,7 @@ const products = [
     price: "S/. 299.00",
     colors: ["Negro", "Azul", "Gris"],
     sizes: ["15\"", "17\""],
-    image: "/lovable-uploads/8b79e571-f6eb-4ebd-9ccb-ee36a13b2076.png",
+    image: "/images/nueva.png",
     features: [
       "Puerto USB integrado",
       "Compartimiento acolchado para laptop",
